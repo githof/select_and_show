@@ -1,0 +1,3 @@
+
+- See test_select_and_show:
+  test null or  something when no range / selection, to avoid range error

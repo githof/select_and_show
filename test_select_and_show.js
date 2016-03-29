@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    // Test with elements already in html
+    
     var $source = $("#source");
     var $show = $("#sel");
 
@@ -14,6 +16,9 @@ $(document).ready(function(){
 	}
     );
 
+    // Test with elements added in html,
+    // object created once elements added
+
     $source = $('<p>',
 		     {
 			 'class': "texte",
@@ -26,7 +31,7 @@ $(document).ready(function(){
 
     $("#test").append([ $source, $show ]);
 
-    $source.text("Buda-Pesth seems a wonderful place, from the glimpse which I got of it from the train and the little I could walk through the streets. I feared to go very far from the station, as we had arrived late and would start as near the correct time as possible.");
+    $source.text("Test with elements added in html, object created once elements added.");
     
     var S2 = new select_and_show(
 	$source,
@@ -39,4 +44,31 @@ $(document).ready(function(){
 	}
     );
 
+    // Test with elements added in html,
+    // object created *before* elements are added
+    // BUG: will yield console error 'The given range isn't in document'
+    // TODO: test null or something when no range / selection
+
+    $source = $('<p>',
+		     {
+			 'class': "texte",
+		     });
+
+    $show = $('<p>',
+		     {
+			 'class': "texte",
+		     });
+
+    var S3 = new select_and_show(
+	$source,
+	$show,
+	function ()
+	{
+	}
+    );
+
+    $source.text("Test with elements added in html, object created *before* elements are added");
+    
+    $("#test").append([ $source, $show ]);
+    
 });
