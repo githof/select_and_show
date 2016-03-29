@@ -1,0 +1,46 @@
+
+article.test_select section.texte
+{
+    width: 80%;
+    border: solid thin lightgray;
+    padding: .5ex 1em;
+    margin: 1ex 1em;
+}
+
+article.test_select p.texte
+{
+    font-family: monospace;
+    border: solid thin gray;
+    min-height: 2ex;
+}
+
+article.test_select dt
+{
+    float: left;
+    font-weight: bold;
+}
+
+article.test_select dd
+{
+    margin-left: 5em;
+}
+
+article.test_select ul
+{
+    list-style-type: none;
+}
+
+article.test_select label.toggle_raw
+{
+    margin-left: .5em;
+    color: lightgray;
+    text-decoration: underline;
+    font-size: smaller;
+    cursor: pointer;
+}
+
+article.test_select label.toggle_raw:after
+{
+    content: "\a";
+    white-space: pre;
+}
